@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine?</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #ffe6eb;
+  text-align: center;
+  padding-top: 80px;
+}
+h1 {
+  color: #ff3366;
+  font-size: 2.8em;
+}
+button {
+  font-size: 1.2em;
+  padding: 15px 25px;
+  margin: 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.yes { background: #ff4d6d; color: white; }
+.no { background: #ccc; }
+#response { font-size: 2em; margin-top: 40px; }
+.spotify-player { margin-top: 30px; }
+</style>
+</head>
+
+<body>
+
+<h1>Miss accountant</h1>
+<h2>Will you be my Valentine? ❤️</h2>
+
+<button class="yes" onclick="sayYes()">YES 💖</button>
+<button class="no" onmouseover="moveNo(this)">NO 😢</button>
+
+<div id="response"></div>
+
+<div class="spotify-player" style="display:none;" id="player">
+  <!-- Paste your Spotify embed here -->
+  <iframe
+    src="https://open.spotify.com/embed/track/6frHVud0JKYyXjTKT5xPtm"
+    width="300" height="80" frameborder="0"
+    allowtransparency="true"
+    allow="encrypted-media">
+  </iframe>
+  <p>Tap ▶️ to play!</p>
+</div>
+
+<script>
+function sayYes() {
+  document.getElementById("response").innerHTML =
+    "YAY!!! I can't wait 💘";
+  document.getElementById("player").style.display = "block";
+}
+
+function moveNo(button) {
+  button.style.position = "absolute";
+  button.style.top = Math.random()*80 + "%";
+  button.style.left = Math.random()*80 + "%";
+}
+</script>
+
+</body>
+</html>
